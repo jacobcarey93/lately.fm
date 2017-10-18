@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+.main{
+    background: #000
+}
+
+.nav_fix {
+    position: fixed;
+}
+
+.main_parent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Lato';
+    font-weight: 700;
+    color: #fff;
+}
+
+.image_styles{
+    height: 100px;
+    width: 100px;
+    border-radius: 50px;
+}
+
+.review_parent{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Lato';
+    font-weight: 700;
+    color: #fff;
+    height: 100%;
+    width: 100%;
+}
+
