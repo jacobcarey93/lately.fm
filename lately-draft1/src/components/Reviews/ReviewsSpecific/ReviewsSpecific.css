@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+.nav_fix {
+    position: fixed;
+}
+
+.spec_reviews_main {
+    height: 100%;
+    width: 100%;
+    background-color: #373737;
+}
+
+.spec_reviews_parent {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.spec_highlight_review {
+    background-color: #F4F4F4;
+    height: 500px;
+    width: 1000px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 10px 20px 0 rgba(0,0,0,0.1), 0 6px 6px 0 rgba(0,0,0,0.2);    
+}
+
+.spec_image_styles {
+    height: 390px;
+    width: 390px;
+}
+
+.spec_review_styles {
+    font-family: 'Lato';
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #C0B283;
+}
+
+.spec_review_description {
+    height: 390px;
+    width: 500px;
+    font-family: 'Lato';
+    font-size: 20px;
+    letter-spacing: 2px;
+    color: #C0B283;
+    display: flex;
+    align-items: center;
+}

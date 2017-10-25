@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './ArtistsHome.css';
-import Navbar from '../../Navbar/Navbar';
+import Navbar from '../../Navbar/Navbar'
 import axios from 'axios';
 
 class ArtistsHome extends Component {
@@ -8,7 +8,7 @@ class ArtistsHome extends Component {
     super()
 
     this.state = {
-      artists: []
+      artists: [],
     }
   }
 
@@ -24,24 +24,24 @@ class ArtistsHome extends Component {
 
   render() {
     return (
-      <div>
-        <Navbar className='nav_fix'/>
-        <div className='main_parent'>
-        <div className='artist_parent'>
-          {this.state.artists === 0 ? <p>Loading...</p> : this.state.artists.map((artist, index) => {
-            return (
-              <div>
+      <div className='home_artists_main'>
+      <Navbar className='nav_fix' />
+      <div className='home_artists_parent'>
+        <div className='home_artist_header'>ARTISTS</div>
+        {this.state.artists === 0 ? <p>loading..</p> : this.state.artists.map((artist, index) => {
+          return (
+            <div className='home_highlight_artist'>
+              <div className='home_artist_styles'>
                 <div>
-                  <img src={artist.artist_image} className='image_styles' />
+                <img src={artist.artist_image} className='home_artist_image_styles'/>
                 </div>
-                <p>{artist.artist_name}</p>
-                <p>{artist.artist_summary}</p>
+                <h2>{artist.artist_name}</h2>
               </div>
-            )
-          })}
-        </div>
-        </div>
+            </div>
+          )
+        })}
       </div>
+    </div>
     );
   }
 }

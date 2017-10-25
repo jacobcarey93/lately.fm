@@ -9,7 +9,6 @@ import AdminReviewManger from './components/Admin/AdminReviewManager/AdminReview
 import AdminStoreManager from './components/Admin/AdminStoreManager/AdminStoreManager';
 import ArtistsHome from './components/Artists/ArtistsHome/ArtistsHome';
 import ArtistsSpecific from './components/Artists/ArtistsSpecific/ArtistsSpecific';
-import Contact from './components/Contact/Contact';
 import HomePage from './components/HomePage/HomePage';
 // import MusicPlayer from './components/MusicPlayer/MusicPlayer';
 // import Navbar from './components/Navbar/Navbar';
@@ -17,14 +16,16 @@ import PlaylistHome from './components/Playlist/PlaylistHome/PlaylistHome';
 import PlaylistSpecific from './components/Playlist/PlaylistSpecific/PlaylistSpecific';
 import ReviewsHome from './components/Reviews/ReviewsHome/ReviewsHome';
 import ReviewsSpecific from './components/Reviews/ReviewsSpecific/ReviewsSpecific';
-import AccountCreator from './components/Store/AccountCreator/AccountCreator';
+// import AccountCreator from './components/Store/AccountCreator/AccountCreator';
 import AccountOverview from './components/Store/AccountOverview/AccountOverview';
-import ProductView from './components/Store/ProductView/ProductView';
+// import ProductView from './components/Store/ProductView/ProductView';
 import StoreHome from './components/Store/StoreHome/StoreHome';
+// import StoreMainPage from './components/Store/StoreMainPage/StoreMainPage';
 // import Stripe from './components/Stripe/Stripe';
 import VideosHome from './components/Videos/VideosHome/VideosHome';
 import VideosSpecific from './components/Videos/VideosSpecific/VideosSpecific';
 import Splash from './components/Splash/Splash';
+// import TheShopHome from './components/TheShop/TheShopHome/TheShopHome';
 
 export default (
   <Switch>
@@ -36,18 +37,19 @@ export default (
     <Route component={ AdminReviewManger } exact path="/admin/reviewmanager" />
     <Route component={ AdminStoreManager } exact path="/admin/storemanager" />
     <Route component={ ArtistsHome } exact path="/artists" />
-    <Route component={ ArtistsSpecific } exact path="/artists/:id" />
-    <Route component={ Contact } exact path="/contact" />
+    <Route component={ ArtistsSpecific } exact path="/moreartists" />
     <Route component={ PlaylistHome } exact path="/playlists" />
     <Route component={ PlaylistSpecific } exact path="/playlists/:id" />
     <Route component={ ReviewsHome } exact path="/reviews" />
-    <Route component={ ReviewsSpecific } exact path="/reviews/:id" />
-    <Route component={ AccountCreator } exact path="/createaccount" />
+    <Route component={ ReviewsSpecific } exact path="/morereviews" />
+    {/* <Route component={ AccountCreator } exact path="/createaccount" /> */}
     <Route component={ AccountOverview } exact path="/account/:id" />
-    <Route component={ ProductView } exact path="/product/:id" />
+    {/* <Route component={ ProductView } exact path="/product/:id" /> */}
     <Route component={ StoreHome } exact path="/store" />
+    {/* <Route component={ StoreMainPage } exact path="/mainstore" /> */}
+    {/* <Route component={ TheShopHome } exact path="/shophome" /> */}
     <Route component={ VideosHome } exact path="/videos" />
-    <Route component={ VideosSpecific } exact path="/videos/:id" />
+    <Route component={ VideosSpecific } exact path="/morevideos" />
     <Route component={ Splash } exact path='/' />
   </Switch>
 )

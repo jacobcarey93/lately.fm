@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import './VideosHome.css';
 import Navbar from '../../Navbar/Navbar';
 import axios from 'axios';
+import YouTube from 'react-youtube';
 
 class VideosHome extends Component {
-  constructor(){
+  constructor() {
     super()
 
     this.state = {
@@ -19,29 +20,42 @@ class VideosHome extends Component {
           videos: res.data
         })
       })
-    }
+  }
+
+  _onReady(event) {
+    // access to player in all event handlers via event.target
+    event.target.pauseVideo();
+  }
 
   render() {
+    const opts = {
+      height: '390',
+      width: '640',
+      playerVars: {
+        autoplay: 0
+      }
+    }
     return (
-      <div>
+      <div className='home_videos_main'>
         <Navbar className='nav_fix' />
-        <div className='main_parent'>
-          <div className='video_parent'>
-            {this.state.videos === 0 ? <p>Loading...</p> : this.state.videos.map((video, index) => {
-              return (
-                <div>
-                  <div>
-                    {/* <img src={video.video_url} className='image_styles' /> */}
-                    <video playsInline className='video-styles'>
-                    <source src={video.video_url} type='video/mp4' />
-                </video>
-                  </div>
-                  <p>{video.video_name}</p>
-                  <p>{video.video_description}</p>
+        <div className='home_videos_parent'>
+        <div className='home_video_header'>VIDEOS</div>
+          {this.state.videos === 0 ? <p>loading..</p> : this.state.videos.map((video, index) => {
+            return (
+              <div className='home_highlight_video'>
+                <div className='home_video_styles'>
+                  <YouTube
+                    videoId={video.video_url}
+                    opts={opts}
+                    onReady={this._onReady}
+                  />
+                  <h2>{video.video_name}</h2>
+                  <p>{video.video_date}</p>
                 </div>
-              )
-            })}
-          </div>
+                <div className='home_description'>{video.video_description}</div>
+              </div>
+            )
+          })}
         </div>
       </div>
     );
@@ -49,3 +63,5 @@ class VideosHome extends Component {
 }
 
 export default VideosHome;
+
+

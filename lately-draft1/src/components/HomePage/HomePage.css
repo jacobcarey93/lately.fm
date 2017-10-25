@@ -1,41 +1,89 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
 
-.main{
-    background: #000
+.main1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.nav_fix {
+.main2 {
+    width: 100%;
+    height: 100%;
+    background-color: #373737;
+}
+
+.navbar {
+    overflow: hidden;
     position: fixed;
-}
-
-.main_parent {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-family: 'Lato';
-    font-weight: 700;
-    color: #fff;
-}
-
-.image_styles{
-    height: 100px;
-    width: 100px;
-    border-radius: 50px;
-}
-
-.review_parent{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-family: 'Lato';
-    font-weight: 700;
-    color: #fff;
-    height: 500px;
+    top: 0;
     width: 100%;
 }
 
-.video_styles{
-    height: 100px;
-    width: 100px;
-    border-radius: 50px;
+.child2 {
+    width: 1800px;
+    height: 580px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.review_header {
+    width: 100%;
+    height: 580;
+    background-color: transparent;
+    color: #F4F4F4;
+    font-family: 'Lato';
+    font-weight: 700;
+    font-size: 150px;
+    display: flex;
+    justify-content: center;
+    letter-spacing: 75px;
+    position: absolute;
+    text-shadow: 7px 7px 4px #373737; 
+    text-decoration: none;
+}
+
+.review_album_image {
+    height: 600px;
+    width: 600px;
+    opacity: 0.5;
+}
+
+.big_daddy {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.pic_container1 {
+    width: 800px;
+    height: 500px;
+}
+
+.pic_container2 {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    height: 525px;
+    width: 800px;
+    margin-bottom: 5px;
+}
+
+.image_size1 {
+    height: 495px;
+    width: 780px;
+}
+
+.image_size2 {
+    height: 235px;
+    width: 390px;
+}
+
+a {
+    text-decoration: none;
+    color: #F4F4F4;
 }

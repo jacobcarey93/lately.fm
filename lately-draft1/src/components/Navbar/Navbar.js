@@ -1,105 +1,156 @@
 import React, { Component } from 'react';
-// import { Link } from "react-router-dom";
 import './Navbar.css';
-import video from '../../assets/video.svg'
-import about from '../../assets/about.svg'
-import artists from '../../assets/artists.svg'
-import contact from '../../assets/contact.svg'
-import playlists from '../../assets/playlists.svg'
-import records from '../../assets/records.svg'
-import review from '../../assets/review.svg'
-import shop from '../../assets/shop.svg'
+import video from '../../assets/video.svg';
+import about from '../../assets/about.svg';
+import artists from '../../assets/artists.svg';
+import contact from '../../assets/contact.svg';
+import playlists from '../../assets/playlists.svg';
+import records from '../../assets/records.svg';
+import review from '../../assets/review.svg';
+import shop from '../../assets/shop.svg';
+import axios from 'axios';
+import facebook from './ContactSvg/facebook.svg';
+import twitter from './ContactSvg/twitter.svg';
+import instagram from './ContactSvg/instagram.svg';
+import soundcloud from './ContactSvg/soundcloud.svg';
+import spotify from './ContactSvg/spotify.svg';
 
 
 export default class Navbar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      slideVisible: false,
-      xMarksTheBurger: false,
-      theCons: false,
+      mainSlideVisible: false,
+      menuAnimation: false,
+      contactSlideVisible: false,
+      searchText: '',
     }
 
-    this.openSlide = this.openSlide.bind( this );
-    this.crissCross = this.crissCross.bind( this );
-    this.bringInTheCons = this.bringInTheCons.bind( this );
+    this.openSlide = this.openSlide.bind(this);
+    this.crissCross = this.crissCross.bind(this);
+    this.handleSearchChange = this.handleSearchChange.bind( this );
+    this.openContactSlide = this.openContactSlide.bind( this );
+    // this.search = this.search.bind( this );
 
   }
 
   openSlide() {
+    if (this.state.contactSlideVisible && this.state.mainSlideVisible === true) {
+      this.setState({
+        contactSlideVisible: false,
+        mainSlideVisible: false
+      })
+    } else {
+      this.setState({
+        mainSlideVisible: !this.state.mainSlideVisible
+      })
+    }
+  }
+
+  crissCross() {
     this.setState({
-      slideVisible: !this.state.slideVisible
+      menuAnimation: !this.state.menuAnimation
     })
   }
 
-  crissCross(){
+  openContactSlide() {
     this.setState({
-      xMarksTheBurger: !this.state.xMarksTheBurger
+      contactSlideVisible: !this.state.contactSlideVisible
     })
   }
 
-  bringInTheCons(){
-    this.setState({
-      theCons: !this.state.theCons
-    })
+  handleSearchChange( event ) {
+    this.setState({ 
+      text: event.target.value 
+    }) 
   }
+
+  // come back to this i dont think it works
+  // search(){
+  //   axios.get('http://localhost:3000/' + this.state.text)
+  //   .then( (res) => {
+  //     console.log(res)
+  //   })
+  // }
 
 
   render() {
     return (
 
-      <div className={this.state.slideVisible ? 'slide open' : 'slide'} >
-      <div className="head_parent_container orange-gradient">
-        <div className="head_child_container">
-          <div className="head_child_left">
-            <span className="head_title lato">LATELY.FM</span>
-          </div>
-          <div className='head_child_right'>
-            <div>
-              <img className="search_img" src='http://www.iconsdb.com/icons/preview/white/search-12-xxl.png' alt="search" />
+      // main divs
+      <div className={this.state.mainSlideVisible ? 'nav_slide nav_open' : 'nav_slide'} >
+        <div className="nav_head_parent_container charcoal">
+          <div className="nav_head_child_container">
+
+            {/* lately logo */}
+            <div className="nav_head_child_left">
+              <span className="nav_head_title lato"><a href='/homepage'>LATELY.FM</a></span>
             </div>
-            <div className="container" onClick={ this.openSlide }>
-              <div className='container1' onClick={ this.crissCross }>
-              <div className={ this.state.xMarksTheBurger ? 'change1' : 'bar1' }></div>
-              <div className={ this.state.xMarksTheBurger ? 'change2' : 'bar2' }></div>
-              <div className={ this.state.xMarksTheBurger ? 'change3' : 'bar3' }></div>
+
+
+            {/* search image */}
+            <div className='nav_head_child_right'>
+              <img src='http://www.iconsdb.com/icons/preview/white/search-12-xxl.png' className='nav_search_img' />
+              <div>
+                <div id="wrap">
+                  <input id="search" name="search" type="text" placeholder="search" onChange={ this.handleSearchChange}/><input id="search_submit" value="Rechercher" type="submit"  />
+                </div>
+              </div>
+
+              {/* menu button */}
+              <div className="nav_container" onClick={this.openSlide}>
+                <div className='nav_container1' onClick={this.crissCross}>
+                  <div className={this.state.menuAnimation ? 'change1' : 'bar1'}></div>
+                  <div className={this.state.menuAnimation ? 'change2' : 'bar2'}></div>
+                  <div className={this.state.menuAnimation ? 'change3' : 'bar3'}></div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-        <div className={this.state.slideVisible ? 'flexin_on_them_hoes' : 'hide_links'}>
-        <div className='literally_just_stacking_stuff'>
-        <a href='reviews'>{<img src={ review } className='icon_size' alt='reviews'/>}</a>
-        <span>REVIEWS</span>
+
+        {/* drop down menu */}
+        <div className={this.state.mainSlideVisible ? 'nav_flexin_on_them_hoes' : 'nav_hide_links'}>
+          <div className='nav_literally_just_stacking_stuff'>
+            <a href='reviews'>{<img src={review} className='nav_icon_size' alt='reviews' />}</a>
+            <span>REVIEWS</span>
+          </div>
+          <div className='nav_literally_just_stacking_stuff'>
+            <a href='artists'>{<img src={artists} className='nav_icon_size' alt='artists' />}</a>
+            <span>ARTISTS</span>
+          </div>
+          <div className='nav_literally_just_stacking_stuff'>
+            <a href='https://open.spotify.com/user/lately.fm'>{<img src={playlists} className='nav_icon_size' alt='playlists' />}</a>
+            <span>PLAYLISTS</span>
+          </div>
+          <div className='nav_literally_just_stacking_stuff'>
+            <a href='videos'>{<img src={video} className='nav_icon_size' alt='video' />}</a>
+            <span>VIDEO</span>
+          </div>
+          <div className='nav_literally_just_stacking_stuff'>
+            <a href='https://soundcloud.com/latelyfm'>{<img src={records} className='nav_icon_size' alt='records' />}</a>
+            <span>LATELY RECORDS</span>
+          </div>
+          <div className='nav_literally_just_stacking_stuff'>
+            <a href='store'>{<img src={shop} className='nav_icon_size' alt='store' />}</a>
+            <span>STORE</span>
+          </div>
+          <div className='nav_literally_just_stacking_stuff'>
+            <a href='about'>{<img src={about} className='nav_icon_size' alt='about' />}</a>
+            <span>ABOUT</span>
+          </div>
+          <div className='nav_literally_just_stacking_stuff'>
+            <a><img src={contact} className='nav_icon_size' alt='contact' onClick={this.openContactSlide} /></a>
+            <span>CONTACT</span>
+          </div>
         </div>
-        <div className='literally_just_stacking_stuff'>
-        <a href='artists'>{<img src={ artists } className='icon_size' alt='artists'/>}</a>
-        <span>ARTISTS</span>
-        </div>
-        <div className='literally_just_stacking_stuff'>
-        <a href='playlists'>{<img src={ playlists } className='icon_size' alt='playlists'/>}</a>
-        <span>PLAYLISTS</span>
-        </div>
-        <div className='literally_just_stacking_stuff'>
-        <a href='videos'>{<img src={ video } className='icon_size' alt='video'/>}</a>
-        <span>VIDEO</span>
-        </div>
-        <div className='literally_just_stacking_stuff'>
-        <a href='#'>{<img src={ records } className='icon_size' alt='records'/>}</a>
-        <span>LATELY RECORDS</span>
-        </div>
-        <div className='literally_just_stacking_stuff'>
-        <a href='store'>{<img src={ shop } className='icon_size' alt='store'/>}</a>
-        <span>STORE</span>
-        </div>
-        <div className='literally_just_stacking_stuff'>
-        <a href='about'>{<img src={ about } className='icon_size' alt='about'/>}</a>
-        <span>ABOUT</span>
-        </div>
-        <div className='literally_just_stacking_stuff'>
-        <a href='contact'>{<img src={ contact } className='icon_size' alt='contact'/>}</a>
-        <span>CONTACT</span>
+        <div>
+          <div className={this.state.contactSlideVisible ? 'nav_contact_slide nav_open_contact' : 'nav_contact_slide'}>
+          <a href='https://twitter.com/latelyfm'><img src={twitter} className='nav_contact_icons' alt='twitter'/></a>
+          <a href='https://www.facebook.com/latelyfm'><img src={facebook} className='nav_contact_icons' alt='facebook'/></a>
+          <a href='https://open.spotify.com/user/lately.fm'><img src={spotify} className='nav_contact_icons' alt='spotify'/></a>
+          <a href='https://soundcloud.com/latelyfm'><img src={soundcloud} className='nav_contact_icons' alt='soundcloud'/></a>
+          <a href='https://www.instagram.com/lately.fm/'><img src={instagram} className='nav_contact_icons' alt='instagram'/></a>
         </div>
         </div>
       </div>

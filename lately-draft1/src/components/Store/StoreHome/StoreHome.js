@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
-import './StoreHome.css'
-import { connect } from 'react-redux'
-import axios from 'axios'
+import './StoreHome.css';
+import { connect } from 'react-redux';
+import axios from 'axios';
+import addtocart from './StoreAssets/addtocart.svg';
+import ShopNavbar from '../../Navbar/ShopNavbar';
+
 
 class StoreHome extends Component {
     constructor(props) {
@@ -21,23 +24,35 @@ class StoreHome extends Component {
             })
     }
 
+    chooseProduct(id) {
+        axios.get(`/api/products/${id}`)
+            .then()
+    }
+
     render() {
         return (
-            <div>
-                <div>
-                <h1>store</h1>
+            <div className='store_home_main'>
+                <ShopNavbar className='nav_fix' />
+                <div className='store_home_parent'>
+                    <div className='store_home_header'>STORE</div>
+                    <div className='store_home_grid'>
+                        {this.state.products.length === 0 ? <p>Loading...</p> : this.state.products.map((product, index) => {
+                            return (
+                                <div className='store_home_highlight'>
+                                    <div className='store_home_styles'>
+                                        <div>
+                                            <img src={product.product_image} className='store_home_image_styles' />
+                                        </div>
+                                        <div className='store_home_add_to_cart'>
+                                            <div className='im_running_out_of_names'>{product.product_name}<br />{product.product_price}</div>
+                                            <img src={addtocart} className='store_home_add_to_cart_icon' />
+                                        </div>
+                                    </div>
+                                </div>
+                            )
+                        })}
+                    </div>
                 </div>
-                {this.state.products.length === 0 ? <p>Loading...</p> : this.state.products.map((product, index) => {
-                    return (
-                        <div key={index} className='main'>
-                        <div> 
-                        <img src={product.product_image} className='image_div'/>
-                            <p>{product.product_name}</p>
-                            <p>{product.product_price}</p>
-                        </div>
-                        </div>
-                    )
-                })}
             </div>
         )
     }
