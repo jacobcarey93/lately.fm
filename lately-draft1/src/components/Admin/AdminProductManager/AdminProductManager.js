@@ -52,6 +52,7 @@ class AdminProductManager extends Component {
   render() {
     return (
       <div>
+        <Navbar />
         <p>AdminProductManager</p>
         <p>Product Name:<input onChange={this.handleNameChange}></input></p>
         <p>Product Price:<input onChange={this.handlePriceChange}></input></p>

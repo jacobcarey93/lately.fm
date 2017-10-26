@@ -45,6 +45,7 @@ class AdminArtistManager extends Component {
   render() {
     return (
       <div>
+        <Navbar />
         <p>AdminArtistManager</p>
         <p>Artist Name: <input onChange={this.handleNameChange}></input></p>
         <p>Artist Image Url: <input onChange={this.handleImageChange}></input></p>

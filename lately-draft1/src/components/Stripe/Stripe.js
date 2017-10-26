@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './Stripe.css';
 import StripeCheckout from 'react-stripe-checkout';
 import stripe from './StripeKey';
 import axios from 'axios';
@@ -18,13 +17,11 @@ class Stripe extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
         </div>
         <StripeCheckout
           token={this.onToken}
           stripeKey={ stripe.pub_key }
-          amount={1000}
+          amount={10000000}
           
         />
       </div>

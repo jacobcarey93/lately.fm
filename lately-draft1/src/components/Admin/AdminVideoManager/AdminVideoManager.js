@@ -53,6 +53,7 @@ class AdminVideoManager extends Component {
   render() {
     return (
       <div>
+        <Navbar />
         <p>AdminVideoManager</p>
         <p>Video Name:<input onClick={this.handleNameChange}></input></p>
         <p>Video Url:<input onClick={this.handleUrlChange}></input></p>

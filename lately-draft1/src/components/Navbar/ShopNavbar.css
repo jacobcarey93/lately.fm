@@ -69,7 +69,7 @@
     font-size: 20px;
   }
 
-  .nav_head_child_right{
+  .shopnav_head_child_right{
     width: 100%;
     display: flex;
     justify-content: flex-end;
@@ -249,11 +249,11 @@ input[type="submit"] {
   transition: opacity .4s ease;
 }
 
-.nav_contact_slide {
-  height: 1000px;
+.shopnav_contact_slide {
+  height: 945px;
   width: 0px;
   margin-top: -25px;
-  /* position: absolute; */
+  position: absolute;
   right: 0px;
   float: right;
   display: flex;
@@ -270,12 +270,11 @@ input[type="submit"] {
   display: none;
 }
 
-.nav_open_contact{
-  height: 1000px;
+.shopnav_open_contact{
+  height: 945px;
   width: 375px;
   margin-top: -25px;
   right: 0px;
-  /* opacity: 0.9; */
 }
 
 .nav_contact_icons {
@@ -295,15 +294,17 @@ input[type="submit"] {
   width: 39px;
 }
 
-.shopnav_pullout_cart {
-  height: 1000px;
+.nav_pullout_cart {
+  height: 945px;
   width: 375px;
   color: #F4F4F4;
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  flex-direction: column;
   font-family: 'Lato';
   font-size: 25px;
   letter-spacing: 5px;
 }
 
+.move_over {
+  margin-left: 25px;
+}

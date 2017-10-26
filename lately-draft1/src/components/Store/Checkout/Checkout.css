@@ -1,9 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
 
 .cart_product_main {
-    height: 100%;
-    width: 375px;
-    margin-bottom: 5px;
+    height: 100vh;
+    width: 100vw;
 }
 
 .cart_product_parent {
@@ -42,7 +41,7 @@
     display: none;
 }
 
-/* .fix_checkout_footer {
-    position: fixed;
-    bottom: 0px;
-} */
+.remove_product {
+    float: right;
+    margin-top: -13px;
+}

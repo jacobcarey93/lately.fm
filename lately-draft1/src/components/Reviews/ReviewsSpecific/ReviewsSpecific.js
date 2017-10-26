@@ -32,7 +32,7 @@ class ReviewsSpecific extends Component {
             <div className='spec_highlight_review'>
               <div className='spec_review_styles'>
                 <div>
-                <img src={review.album_image} className='spec_image_styles'/>
+                <img src={review.album_image} className='spec_image_styles' alt={review.artist_name}/>
                 </div>
                 <h2>{review.artist_name}</h2>
                 <p>{review.review_date}</p>

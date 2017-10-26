@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './AccountOverview.css';
-import axios from 'axios';
+// import axios from 'axios';
 import { getUserInfo } from '../../../ducks/reducer';
 import { connect } from 'react-redux';
 import { Link } from "react-router-dom";

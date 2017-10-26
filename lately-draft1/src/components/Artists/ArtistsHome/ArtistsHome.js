@@ -33,7 +33,7 @@ class ArtistsHome extends Component {
             <div className='home_highlight_artist'>
               <div className='home_artist_styles'>
                 <div>
-                <img src={artist.artist_image} className='home_artist_image_styles'/>
+                <img src={artist.artist_image} className='home_artist_image_styles' alt={artist.artist_name}/>
                 </div>
                 <h2>{artist.artist_name}</h2>
               </div>

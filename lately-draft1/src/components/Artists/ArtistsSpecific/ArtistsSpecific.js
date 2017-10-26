@@ -33,7 +33,7 @@ class ArtistsSpecific extends Component {
             <div className='spec_highlight_artist'>
               <div className='spec_artist_styles'>
                 <div>
-                <img src={artist.artist_image} className='spec_artist_image_styles'/>
+                <img src={artist.artist_image} className='spec_artist_image_styles' alt={artist.artist_name}/>
                 </div>
                 <h2>{artist.artist_name}</h2>
               </div>

@@ -11,21 +11,19 @@ import ArtistsHome from './components/Artists/ArtistsHome/ArtistsHome';
 import ArtistsSpecific from './components/Artists/ArtistsSpecific/ArtistsSpecific';
 import HomePage from './components/HomePage/HomePage';
 // import MusicPlayer from './components/MusicPlayer/MusicPlayer';
-// import Navbar from './components/Navbar/Navbar';
 import PlaylistHome from './components/Playlist/PlaylistHome/PlaylistHome';
 import PlaylistSpecific from './components/Playlist/PlaylistSpecific/PlaylistSpecific';
 import ReviewsHome from './components/Reviews/ReviewsHome/ReviewsHome';
 import ReviewsSpecific from './components/Reviews/ReviewsSpecific/ReviewsSpecific';
-// import AccountCreator from './components/Store/AccountCreator/AccountCreator';
 import AccountOverview from './components/Store/AccountOverview/AccountOverview';
-// import ProductView from './components/Store/ProductView/ProductView';
 import StoreHome from './components/Store/StoreHome/StoreHome';
-// import StoreMainPage from './components/Store/StoreMainPage/StoreMainPage';
-// import Stripe from './components/Stripe/Stripe';
 import VideosHome from './components/Videos/VideosHome/VideosHome';
 import VideosSpecific from './components/Videos/VideosSpecific/VideosSpecific';
 import Splash from './components/Splash/Splash';
-// import TheShopHome from './components/TheShop/TheShopHome/TheShopHome';
+import Details from './components/Store/Details/Details';
+// import Cart from './components/Store/Cart/Cart';
+import Checkout from './components/Store/Checkout/Checkout';
+import Stripe from './components/Stripe/Stripe';
 
 export default (
   <Switch>
@@ -42,14 +40,14 @@ export default (
     <Route component={ PlaylistSpecific } exact path="/playlists/:id" />
     <Route component={ ReviewsHome } exact path="/reviews" />
     <Route component={ ReviewsSpecific } exact path="/morereviews" />
-    {/* <Route component={ AccountCreator } exact path="/createaccount" /> */}
     <Route component={ AccountOverview } exact path="/account/:id" />
-    {/* <Route component={ ProductView } exact path="/product/:id" /> */}
     <Route component={ StoreHome } exact path="/store" />
-    {/* <Route component={ StoreMainPage } exact path="/mainstore" /> */}
-    {/* <Route component={ TheShopHome } exact path="/shophome" /> */}
     <Route component={ VideosHome } exact path="/videos" />
     <Route component={ VideosSpecific } exact path="/morevideos" />
     <Route component={ Splash } exact path='/' />
+    <Route component={Details} path="/details/:productid" /> 
+    {/* <Route component={Cart} path="/cart" />  */}
+    <Route component={Checkout} path="/checkout" /> 
+    <Route component={Stripe} path="/stripe" /> 
   </Switch>
 )

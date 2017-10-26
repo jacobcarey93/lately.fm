@@ -8,7 +8,6 @@ import playlists from '../../assets/playlists.svg';
 import records from '../../assets/records.svg';
 import review from '../../assets/review.svg';
 import shop from '../../assets/shop.svg';
-import axios from 'axios';
 import facebook from './ContactSvg/facebook.svg';
 import twitter from './ContactSvg/twitter.svg';
 import instagram from './ContactSvg/instagram.svg';

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './HomePage.css';
 import Navbar from '../Navbar/Navbar';
 import axios from 'axios';
-import YouTube from 'react-youtube';
+// import YouTube from 'react-youtube';
 
 class HomePage extends Component {
   constructor() {
@@ -10,7 +10,7 @@ class HomePage extends Component {
     this.state = {
       artists: [],
       reviews: [],
-      videos: [],
+      // videos: [],
     }
   }
 
@@ -27,10 +27,10 @@ class HomePage extends Component {
           reviews: res.data
         })
       })
-    axios.get('/api/new/videos')
-      .then(res => {
-        videos: res.data
-      })
+    // axios.get('/api/new/videos')
+    //   .then(res => {
+    //     videos: res.data
+    //   })
   }
 
   _onReady(event) {
@@ -55,7 +55,7 @@ class HomePage extends Component {
             {this.state.reviews === 0 ? <p>loading...</p> : this.state.reviews.map((review, index) => {
               return (
                 <div>
-                  <img src={review.album_image} className='review_album_image' />
+                  <img src={review.album_image} className='review_album_image' alt={review.artist_name}/>
                 </div>
               )
             })}
@@ -63,13 +63,13 @@ class HomePage extends Component {
           </div>
           <div className='big_daddy'>
             <div className='pic_container1'>
-              <div><img src='http://content.acclaimmag.com/content/uploads/2016/01/toro-y-moi-503191b8d6888.jpg' className='image_size1' /></div>
+              <div><img src='http://content.acclaimmag.com/content/uploads/2016/01/toro-y-moi-503191b8d6888.jpg' className='image_size1' alt='some pic'/></div>
             </div>
             <div className='pic_container2'>
-              <div><img src='https://storage.googleapis.com/relevant-magazine/2017/05/WashedOut1.jpg' className='image_size2' /></div>
-              <div><img src='https://pulpjuiced.files.wordpress.com/2017/08/maxresdefault.jpg' className='image_size2' /></div>
-              <div><img src='http://hvngrymag.com/wp-content/uploads/2015/07/fazerdaze.jpg' className='image_size2' /></div>
-              <div><img src='https://i.ytimg.com/vi/WbyyxIZ02Zs/maxresdefault.jpg' className='image_size2' /></div>
+              <div><img src='https://storage.googleapis.com/relevant-magazine/2017/05/WashedOut1.jpg' className='image_size2' alt='some pic'/></div>
+              <div><img src='https://pulpjuiced.files.wordpress.com/2017/08/maxresdefault.jpg' className='image_size2' alt='some pic'/></div>
+              <div><img src='http://hvngrymag.com/wp-content/uploads/2015/07/fazerdaze.jpg' className='image_size2' alt='some pic'/></div>
+              <div><img src='https://i.ytimg.com/vi/WbyyxIZ02Zs/maxresdefault.jpg' className='image_size2' alt='some pic'/></div>
             </div>
             <div className='review_header'>ARTISTS</div>
           </div>

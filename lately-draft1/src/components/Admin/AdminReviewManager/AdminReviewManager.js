@@ -53,6 +53,7 @@ class AdminReviewManager extends Component {
   render() {
     return (
       <div>
+        <Navbar />
         <p>AdminReviewManager</p>
         <p>Artist Name:<input onClick={this.handleNameChange}></input></p>
         <p>Album Image Url:<input onClick={this.handleImageChange}></input></p>
