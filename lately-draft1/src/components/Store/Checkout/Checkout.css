@@ -1,21 +1,44 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
 
-.cart_product_main {
+.checkout_main {
     height: 100vh;
     width: 100vw;
+    background-color: #373737;
 }
 
-.cart_product_parent {
+.checkout_header {
+    width: 100%;
+    height: 580;
+    background-color: transparent;
+    color: #C0B283;
+    font-family: 'Lato';
+    font-weight: 700;
+    font-size: 150px;
+    display: flex;
+    justify-content: center;
+    letter-spacing: 75px;
+    text-shadow: 10px 10px 7px #373737; 
+    text-decoration: none;
+}
+
+.checkout_parent {
     height: 120px;
-    width: 355px;
+    width: 70%;
     background-color: #ffffff;
     display: flex;
-    margin-left: 10px;
+    /* margin-left: 10px; */
     flex-direction: column;
+    /* align-content: center; */
     margin-top: 25px;
 }
 
-.cart_product_child {
+.checkout_teen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkout_child {
     display: flex;
     justify-content: space-between;
     color: #373737;
@@ -24,24 +47,53 @@
     margin-top: 10px;
 }
 
-.cart_product_image {
+.checkout_product_image {
     height: 100px;
     width: 100px;
 }
 
-.cart_product_text {
+.align_text {
+    height: 125px;
+    width: 125px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    line-height: 1em;
+}
+
+.checkout_product_text {
     margin-top: 5px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-left: 150px;
+    /* align-content: center; */
+    /* align-items: center; */
+    margin-right: 5em;
 }
 
-.hide_product_parent {
+.hide_checkout_parent {
     display: none;
 }
 
-.remove_product {
+.checkout_total {
+    color: #C0B283;
+    font-family: 'Lato';
+    letter-spacing: 7px;
+}
+
+.checkout_total_div {
+    margin-top: 5em;
+}
+
+.total_amount {
     float: right;
-    margin-top: -13px;
+    margin-top: -2.5em;
+    margin-right: 3.5em;
+}
+
+.stripe_div {
+    float: right;
+    margin-right: 2em;
 }

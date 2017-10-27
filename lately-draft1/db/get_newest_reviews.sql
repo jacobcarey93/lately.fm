@@ -1,3 +1,2 @@
 SELECT * FROM reviews
-ORDER BY review_date DESC
-LIMIT 3;
+ORDER BY review_date DESC;

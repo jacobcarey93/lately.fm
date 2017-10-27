@@ -1,19 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './Cart.css';
-import { removeProductFromCart, updateCart } from '../../../ducks/reducer';
 import Stripe from '../../Stripe/Stripe';
 import { Link } from 'react-router-dom';
 
 class Cart extends Component {
 
-  removeProductFromCart(product) {
-    this.props.removeProductFromCart(product);
-  }
-
   render() {
     const cart = this.props.cart;
-    // console.log(this.props.cart)
 
 
     return (
@@ -28,20 +22,17 @@ class Cart extends Component {
             </div>
            )
           })} 
-          {console.log('this is the cart' + cart)}
       </div>
     )
   }
 }
 
 function mapStateToProps(state) {
-  // console.log('this is whats on state.cart' + state.cart)
   return { 
     cart: state.cart
    };
 }
 const mapDispatchToProps = {
-  removeProductFromCart: removeProductFromCart,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Cart);

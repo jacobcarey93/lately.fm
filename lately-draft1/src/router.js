@@ -24,6 +24,8 @@ import Details from './components/Store/Details/Details';
 // import Cart from './components/Store/Cart/Cart';
 import Checkout from './components/Store/Checkout/Checkout';
 import Stripe from './components/Stripe/Stripe';
+import AccountAddress from './components/Store/AccountOverview/AccountAddress/AccountAddress';
+import AddressForm from './components/Store/AccountOverview/AccountAddress/AddressForm';
 
 export default (
   <Switch>
@@ -40,7 +42,7 @@ export default (
     <Route component={ PlaylistSpecific } exact path="/playlists/:id" />
     <Route component={ ReviewsHome } exact path="/reviews" />
     <Route component={ ReviewsSpecific } exact path="/morereviews" />
-    <Route component={ AccountOverview } exact path="/account/:id" />
+    <Route component={ AccountOverview } exact path="/account" />
     <Route component={ StoreHome } exact path="/store" />
     <Route component={ VideosHome } exact path="/videos" />
     <Route component={ VideosSpecific } exact path="/morevideos" />
@@ -49,5 +51,7 @@ export default (
     {/* <Route component={Cart} path="/cart" />  */}
     <Route component={Checkout} path="/checkout" /> 
     <Route component={Stripe} path="/stripe" /> 
+    <Route component={AccountAddress} path="/account/address" /> 
+    <Route component={AddressForm} path="/addressform" /> 
   </Switch>
 )

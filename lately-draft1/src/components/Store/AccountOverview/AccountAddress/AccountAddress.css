@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
 
-.account_overview_main {
+.account_address_main {
     height: 100vh;
     width: 100vw;
     background-color: #373737;
     font-family: 'Lato';
 }
 
-.account_overview_header {
+.account_address_header {
     width: 100%;
     /* height: 580px; */
     background-color: transparent;
@@ -22,27 +22,28 @@
     text-decoration: none;
 }
 
-.account_overview_parent{
+.account_address_parent{
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
 }
 
-.account_overview_child {
+.account_address_child {
     width: 65%;
     height: 100%;
     font-family: 'Lato';
     letter-spacing: 3px;
     color: #C0B283;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
     margin-right: 5em;
     margin-top: 7em;
 }
 
-.account_overview_view_addresses_btn {
+.account_address_view_addresses_btn {
     width: 10em;
     height: 3em;
     border: 1px solid transparent;
@@ -52,3 +53,4 @@
     background-color: #F4F4F4;
     color: #C0B283;    
 }
+

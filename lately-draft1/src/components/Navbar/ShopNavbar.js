@@ -108,14 +108,14 @@ class ShopNavbar extends Component {
               <img src='http://www.iconsdb.com/icons/preview/white/search-12-xxl.png' className='nav_search_img' alt='search' />
               <div>
                 <div id="wrap">
-                  <input id="search" name="search" type="text" placeholder="search" onChange={this.handleSearchChange} /><input id="search_submit" value="Rechercher" type="submit" />
+                  <input id="search" name="search" type="text" placeholder="search" onChange={this.handleSearchChange} className='shopnav_input_one'/><input id="search_submit" value="Rechercher" type="submit" className='shopnav_input_two'/>
                 </div>
               </div>
               <div className='nav_shopping_cart'>
                 <img src={shoppingcart} className='nav_shopping_icon_size' onClick={this.openContactSlide} alt='cart' />
               </div>
               <div className='nav_shopping_cart'>
-                <a href={process.env.REACT_APP_LOGIN}><img src={login} className='shopnav_login_icon' alt='login' /></a>
+                <a href='http://localhost:3005/auth/logout'><img src={login} className='shopnav_login_icon' alt='login' /></a>
               </div>
               <div className='nav_shopping_cart'>
                 <a href='/store'><img src={gohome} className='shopnav_home_icon' alt='home' /></a>

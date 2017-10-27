@@ -1,0 +1,10 @@
+.stripe_checkout_btn {
+    width: 10em;
+    height: 3em;
+    border: 1px solid transparent;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 2px;
+    background-color: #F4F4F4;
+    color: #C0B283;    
+}

@@ -190,7 +190,7 @@
   position: relative;
 }
 
-input[type="text"] {
+.nav_input_one {
   height: 50px;
   font-size: 30px;
   display: inline-block;
@@ -212,14 +212,14 @@ input[type="text"] {
   margin-top: 10px;
 }
 
-input[type="text"]:focus {
+.nav_input_one:focus {
   width: 700px;
   z-index: 1;
   border-bottom: 1px solid #BBB;
   cursor: text;
 }
 
-input[type="submit"] {
+.nav_input_two {
   height: 67px;
   width: 63px;
   display: inline-block;

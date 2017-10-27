@@ -54,7 +54,7 @@ function(accessToken, refreshToken, extraParams, profile, done) {
 
 app.get('/auth', passport.authenticate('auth0'));
 app.get('/auth/callback', passport.authenticate('auth0', {
-    successRedirect: 'http://localhost:3000/#/private',
+    successRedirect: 'http://localhost:3000/store',
     failureRedirect: '/auth'
 }));
 app.get('/auth/me', (req, res) => {
@@ -185,6 +185,16 @@ app.get('/api/product/:id', ( req, res, next ) => {
   db.get_product([ params.id ])
   .then( ( product ) => res.status(200).send( product ) )
   .catch( () => res.status(500).send( ) )
+})
+
+//account endpoints
+app.post('/api/account/address/update', ( req, res, next ) => {
+  const db = app.get('db')
+  const { firstName, lastName, address, city, userState, zip } = req.body
+
+  db.create_new_address([ firstName, lastName, address, city, userState, zip ])
+  .then( () => res.status(200).send( ) )
+  .catch( () => res.status(404).send( ) )
 })
 
 //front end admin end points
