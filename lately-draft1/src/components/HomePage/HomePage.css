@@ -29,6 +29,7 @@
     align-items: center;
     text-align: center;
     overflow-x: scroll;
+    margin-top: 5em;
 }
 
 .review_header {
@@ -50,14 +51,14 @@
 .review_album_image {
     height: 600px;
     width: 600px;
-    opacity: 0.5;
+    opacity: 0.8;
 }
 
 .big_daddy {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 50px;
+    margin-top: 200px;
 }
 
 .pic_container1 {
@@ -104,6 +105,7 @@ a {
     position: absolute;
     text-shadow: 7px 7px 4px #373737; 
     text-decoration: none;
+    margin-top: -25px;
 }
 
 .homepage_videos_parent {
@@ -123,8 +125,8 @@ a {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    margin-top: 25px;
-    margin-bottom: 25px;
+    /* margin-top: 25px; */
+    /* margin-bottom: 25px; */
     box-shadow: 0 10px 20px 0 rgba(0,0,0,0.1), 0 6px 6px 0 rgba(0,0,0,0.2);    
 }
 
@@ -145,3 +147,37 @@ a {
     display: flex;
     align-items: center;
 }
+
+/* test */
+
+.rightTI { 
+    /* background: #ff002b; */
+    white-space: nowrap; 
+    overflow: hidden;
+    height: 600px;
+    width: 100%;
+    animation: marqueeToTheLeft 75s linear infinite;
+    box-shadow: 0 10px 20px 0 rgba(0,0,0,0.1), 0 6px 6px 0 rgba(0,0,0,0.2);    
+  }
+
+  .leftTI { 
+    /* background: #ff002b; */
+    margin-top: 17em;
+    white-space: nowrap; 
+    overflow: hidden;
+    height: 600px;
+    width: 100%;
+    animation: marqueeToTheRight 400s linear infinite;
+    box-shadow: 0 10px 20px 0 rgba(0,0,0,0.1), 0 6px 6px 0 rgba(0,0,0,0.2);    
+  }
+  
+  @keyframes marqueeToTheLeft {
+    0% {text-indent: 0%;}
+    100% {text-indent: -100%;}
+  }
+
+  @keyframes marqueeToTheRight {
+    0% {text-indent: 0%;}
+    100% {text-indent: 100%;}
+  }
+

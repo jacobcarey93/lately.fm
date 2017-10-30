@@ -3,6 +3,7 @@ import './VideosHome.css';
 import Navbar from '../../Navbar/Navbar';
 import axios from 'axios';
 import YouTube from 'react-youtube';
+import Footer from '../../Footer/Footer';
 
 class VideosHome extends Component {
   constructor() {
@@ -57,6 +58,7 @@ class VideosHome extends Component {
             )
           })}
         </div>
+        <Footer />
       </div>
     );
   }

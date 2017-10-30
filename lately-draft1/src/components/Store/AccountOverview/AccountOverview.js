@@ -19,7 +19,7 @@ class AccountOverview extends Component {
     }
 
     render() {
-        const user = this.props.user;
+        // const user = this.props.user;
         return (
             <div className='account_overview_main'>
                 <ShopNavbar />
@@ -49,7 +49,7 @@ export default connect(mapStateToProps, { getUserInfo })(AccountOverview);
 
 
 //this is what was in there to begin with
-{/* <h4>Account Overview:</h4>
+/* <h4>Account Overview:</h4>
 { user.id ? <img className='avatar' src={user.img} alt ='avatar'/> : null }
 <p>Username: { user.id ? user.user_name : null }</p>
 <p>Email: { user.id ? user.email : null }</p>
@@ -57,4 +57,4 @@ export default connect(mapStateToProps, { getUserInfo })(AccountOverview);
 <a href='http://localhost:3005/auth/logout'><button>Log out</button></a>
 <Link to='/shop'>
 <p>SHOP</p>
-</Link> */}
+</Link> */

@@ -4,14 +4,16 @@ import { connect } from 'react-redux';
 import axios from 'axios';
 import addtocart from './StoreAssets/addtocart.svg';
 import ShopNavbar from '../../Navbar/ShopNavbar';
-import { setProductsOnRedux, addProductToCart, updateCart } from '../../../ducks/reducer';
-import { Link } from 'react-router-dom';
+import { setProductsOnRedux, addProductToCart } from '../../../ducks/reducer';
+// import { Link } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 class StoreHome extends Component {
-    constructor(props) {
-        super(props)
-    }
+    // constructor(props) {
+    //     super(props)
+    // }
 
 
     componentDidMount() {
@@ -23,6 +25,7 @@ class StoreHome extends Component {
 
     addToCart(product) {
         this.props.addProductToCart(product);
+        toast('ADDED ')
     }
 
     render() {
@@ -44,10 +47,17 @@ class StoreHome extends Component {
                                         <div className='store_home_add_to_cart'>
                                             <div className='im_running_out_of_names'>{product.product_name}<br />{product.product_price}</div>
                                             <img src={addtocart} className='store_home_add_to_cart_icon' alt='add to cart' onClick={() => this.addToCart(product)} />
+                                            <ToastContainer
+                                                position="top-right"
+                                                type="default"
+                                                autoClose={2000}
+                                                hideProgressBar={false}
+                                                newestOnTop={false}
+                                                closeOnClick
+                                                pauseOnHover
+                                            />
                                         </div>
                                     </div>
-                                    {/* {console.log(this.props.products.length)} */}
-
                                 </div>
                             )
                         })}
@@ -60,8 +70,8 @@ class StoreHome extends Component {
 
 
 function mapStateToProps(state) {
-    return { 
-        products: state.products ,
+    return {
+        products: state.products,
         cart: state.cart,
     };
 }

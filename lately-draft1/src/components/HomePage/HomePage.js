@@ -12,6 +12,8 @@ class HomePage extends Component {
       artists: [],
       reviews: [],
       videos: [],
+      reviewImages: [],
+      videoIDs: [],
     }
   }
 
@@ -24,17 +26,44 @@ class HomePage extends Component {
       })
     axios.get('/api/new/reviews')
       .then(res => {
+        const imgArr = [];
+        res.data.map((review, index) => {
+          imgArr.push(review.album_image)
+        })
         this.setState({
-          reviews: res.data
+          reviewImages: imgArr
         })
       })
     axios.get('/api/new/videos')
       .then(res => {
+        const vidArr = [];
+        res.data.map((video, index) => {
+          vidArr.push(video.video_url)
+        })
         this.setState({
-          videos: res.data
+          videoIDs: vidArr
         })
       })
   }
+
+
+  //   axios.get('/api/new/videos')
+  //     .then(res => {
+  //       this.setState({
+  //         videos: res.data
+  //       })
+  //     })
+  // }
+
+  // axios.get('/api/new/reviews')
+  // .then(res => {
+  //   this.setState({
+  //     reviews: res.data,
+  //     reviewImages: res.data.map((review, index) => {
+  //       imgArr.push(review.album_image)
+  //     })
+  //   })
+  // })
 
   _onReady(event) {
     event.target.pauseVideo();
@@ -43,7 +72,7 @@ class HomePage extends Component {
 
   render() {
     const opts = {
-      height: '390',
+      height: '340',
       width: '600',
       playerVars: {
         autoplay: 0
@@ -54,13 +83,47 @@ class HomePage extends Component {
         <Navbar className='navbar' />
         <div className='main2'>
           <div className='child2'>
-            {this.state.reviews === 0 ? <p>loading...</p> : this.state.reviews.map((review, index) => {
+            <div className='rightTI'>
+              <img src={this.state.reviewImages[0]} className='review_album_image ' alt='album 1'/>
+              <img src={this.state.reviewImages[1]} className='review_album_image ' alt='album 2'/>
+              <img src={this.state.reviewImages[2]} className='review_album_image ' alt='album 3'/>
+              <img src={this.state.reviewImages[3]} className='review_album_image ' alt='album 4'/>
+              <img src={this.state.reviewImages[4]} className='review_album_image ' alt='album 5'/>
+              <img src={this.state.reviewImages[0]} className='review_album_image ' alt='album 6'/>
+              <img src={this.state.reviewImages[1]} className='review_album_image ' alt='album 7'/>
+              <img src={this.state.reviewImages[2]} className='review_album_image ' alt='album 8'/>
+              <img src={this.state.reviewImages[3]} className='review_album_image ' alt='album 9'/>
+              <img src={this.state.reviewImages[4]} className='review_album_image ' alt='album 10'/>
+              <img src={this.state.reviewImages[0]} className='review_album_image ' alt='album 11'/>
+              <img src={this.state.reviewImages[1]} className='review_album_image ' alt='album 12'/>
+              <img src={this.state.reviewImages[2]} className='review_album_image ' alt='album 13'/>
+              <img src={this.state.reviewImages[3]} className='review_album_image ' alt='album 14'/>
+              <img src={this.state.reviewImages[4]} className='review_album_image ' alt='album 15'/>
+              <img src={this.state.reviewImages[0]} className='review_album_image ' alt='album 16'/>
+              <img src={this.state.reviewImages[1]} className='review_album_image ' alt='album 17'/>
+              <img src={this.state.reviewImages[2]} className='review_album_image ' alt='album 18'/>
+              <img src={this.state.reviewImages[3]} className='review_album_image ' alt='album 19'/>
+              <img src={this.state.reviewImages[4]} className='review_album_image ' alt='album 20'/>
+              <img src={this.state.reviewImages[0]} className='review_album_image ' alt='album 21'/>
+              <img src={this.state.reviewImages[1]} className='review_album_image ' alt='album 22'/>
+              <img src={this.state.reviewImages[2]} className='review_album_image ' alt='album 23'/>
+              <img src={this.state.reviewImages[3]} className='review_album_image ' alt='album 24'/>
+              <img src={this.state.reviewImages[4]} className='review_album_image ' alt='album 25'/>
+              <img src={this.state.reviewImages[0]} className='review_album_image ' alt='album 26'/>
+              <img src={this.state.reviewImages[1]} className='review_album_image ' alt='album 27'/>
+              <img src={this.state.reviewImages[2]} className='review_album_image ' alt='album 28'/>
+              <img src={this.state.reviewImages[3]} className='review_album_image ' alt='album 29'/>
+              <img src={this.state.reviewImages[4]} className='review_album_image ' alt='album 30'/>
+            </div>
+            {/* {this.state.reviewImages === 0 ? <p>loading...</p> : this.state.reviewImages.map((review, index) => {
               return (
                 <div>
                   <img src={review.album_image} className='review_album_image' alt={review.artist_name} />
                 </div>
               )
-            })}
+            })} */}
+
+
             <div className='review_header'><a href='/reviews'>REVIEWS</a></div>
           </div>
           <div className='big_daddy'>
@@ -75,9 +138,140 @@ class HomePage extends Component {
             </div>
             <div className='review_header'><a href='/artists'>ARTISTS</a></div>
           </div>
+
+
           <div className='homepage_videos_parent'>
             <div className='video_header'><a href='/videos'>VIDEOS</a></div>
-            {this.state.videos === 0 ? <p>loading..</p> : this.state.videos.map((video, index) => {
+
+            <div className='homepage_hightlight_video'>
+              <div className='homepage_video_styles'>
+                <div className='leftTI'>
+                <YouTube
+                  videoId={this.state.videoIDs[0]}
+                  opts={opts}
+                  onReady={this._onReady}
+                />
+                <YouTube
+                  videoId={this.state.videoIDs[1]}
+                  opts={opts}
+                  onReady={this._onReady}
+                />
+                <YouTube
+                  videoId={this.state.videoIDs[2]}
+                  opts={opts}
+                  onReady={this._onReady}
+                />
+                <YouTube
+                  videoId={this.state.videoIDs[3]}
+                  opts={opts}
+                  onReady={this._onReady}
+                />
+                <YouTube
+                  videoId={this.state.videoIDs[0]}
+                  opts={opts}
+                  onReady={this._onReady}
+                />
+                <YouTube
+                  videoId={this.state.videoIDs[1]}
+                  opts={opts}
+                  onReady={this._onReady}
+                />
+                <YouTube
+                  videoId={this.state.videoIDs[2]}
+                  opts={opts}
+                  onReady={this._onReady}
+                />
+                <YouTube
+                  videoId={this.state.videoIDs[3]}
+                  opts={opts}
+                  onReady={this._onReady}
+                />
+                <YouTube
+                  videoId={this.state.videoIDs[0]}
+                  opts={opts}
+                  onReady={this._onReady}
+                />
+                <YouTube
+                  videoId={this.state.videoIDs[1]}
+                  opts={opts}
+                  onReady={this._onReady}
+                />
+                <YouTube
+                  videoId={this.state.videoIDs[2]}
+                  opts={opts}
+                  onReady={this._onReady}
+                />
+                <YouTube
+                  videoId={this.state.videoIDs[3]}
+                  opts={opts}
+                  onReady={this._onReady}
+                />
+                <YouTube
+                  videoId={this.state.videoIDs[0]}
+                  opts={opts}
+                  onReady={this._onReady}
+                />
+                <YouTube
+                  videoId={this.state.videoIDs[1]}
+                  opts={opts}
+                  onReady={this._onReady}
+                />
+                <YouTube
+                  videoId={this.state.videoIDs[2]}
+                  opts={opts}
+                  onReady={this._onReady}
+                />
+                <YouTube
+                  videoId={this.state.videoIDs[3]}
+                  opts={opts}
+                  onReady={this._onReady}
+                />
+                <YouTube
+                  videoId={this.state.videoIDs[0]}
+                  opts={opts}
+                  onReady={this._onReady}
+                />
+                <YouTube
+                  videoId={this.state.videoIDs[1]}
+                  opts={opts}
+                  onReady={this._onReady}
+                />
+                <YouTube
+                  videoId={this.state.videoIDs[2]}
+                  opts={opts}
+                  onReady={this._onReady}
+                />
+                <YouTube
+                  videoId={this.state.videoIDs[3]}
+                  opts={opts}
+                  onReady={this._onReady}
+                />
+                <YouTube
+                  videoId={this.state.videoIDs[0]}
+                  opts={opts}
+                  onReady={this._onReady}
+                />
+                <YouTube
+                  videoId={this.state.videoIDs[1]}
+                  opts={opts}
+                  onReady={this._onReady}
+                />
+                <YouTube
+                  videoId={this.state.videoIDs[2]}
+                  opts={opts}
+                  onReady={this._onReady}
+                />
+                <YouTube
+                  videoId={this.state.videoIDs[3]}
+                  opts={opts}
+                  onReady={this._onReady}
+                />
+                </div>
+              </div>
+            </div>
+
+
+            {/* {this.state.videos === 0 ? <p>loading..</p> : this.state.videos.map((video, index) => {
               return (
                 <div className='homepage_highlight_video'>
                   <div className='homepage_video_styles'>
@@ -89,7 +283,9 @@ class HomePage extends Component {
                   </div>
                 </div>
               )
-            })}
+            })} */}
+
+
           </div>
         </div>
         <Footer />

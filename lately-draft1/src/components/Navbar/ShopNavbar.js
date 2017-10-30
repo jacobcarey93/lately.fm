@@ -17,7 +17,6 @@ import shoppingcart from './ContactSvg/shoppingcart.svg';
 import gohome from './ContactSvg/gohome.svg';
 import login from './ContactSvg/login.svg';
 import Cart from '../Store/Cart/Cart';
-// import Stripe from '../Stripe/Stripe';
 import { Link } from 'react-router-dom';
 
 
@@ -98,12 +97,12 @@ class ShopNavbar extends Component {
             {/* lately logo */}
 
             <div className="nav_head_child_left">
-              <span className="nav_head_title lato"><a href='/homepage'>LATELY.FM</a></span>
+              <Link to='/homepage'>
+              <span className="nav_head_title lato">LATELY.FM</span>
+              </Link>
             </div>
 
-
             {/* search image */}
-
             <div className='shopnav_head_child_right'>
               <img src='http://www.iconsdb.com/icons/preview/white/search-12-xxl.png' className='nav_search_img' alt='search' />
               <div>
@@ -111,14 +110,24 @@ class ShopNavbar extends Component {
                   <input id="search" name="search" type="text" placeholder="search" onChange={this.handleSearchChange} className='shopnav_input_one'/><input id="search_submit" value="Rechercher" type="submit" className='shopnav_input_two'/>
                 </div>
               </div>
+
+              {/* shopping cart image */}
               <div className='nav_shopping_cart'>
                 <img src={shoppingcart} className='nav_shopping_icon_size' onClick={this.openContactSlide} alt='cart' />
               </div>
+
+              {/* login image */}
               <div className='nav_shopping_cart'>
-                <a href='http://localhost:3005/auth/logout'><img src={login} className='shopnav_login_icon' alt='login' /></a>
+                <Link to='/account'>
+                <img src={login} className='shopnav_login_icon' alt='login' />
+                </Link>
               </div>
+
+              {/* home image */}
               <div className='nav_shopping_cart'>
-                <a href='/store'><img src={gohome} className='shopnav_home_icon' alt='home' /></a>
+                <Link to='/store'>
+                <img src={gohome} className='shopnav_home_icon' alt='home' />
+                </Link>
               </div>
             </div>
 

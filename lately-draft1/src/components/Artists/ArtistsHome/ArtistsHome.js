@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './ArtistsHome.css';
 import Navbar from '../../Navbar/Navbar'
 import axios from 'axios';
+import Footer from '../../Footer/Footer';
 
 class ArtistsHome extends Component {
   constructor(){
@@ -41,6 +42,7 @@ class ArtistsHome extends Component {
           )
         })}
       </div>
+      <Footer />
     </div>
     );
   }

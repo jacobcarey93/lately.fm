@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './ReviewsHome.css';
 import Navbar from '../../Navbar/Navbar'
 import axios from 'axios';
+import Footer from '../../Footer/Footer';
 
 class ReviewsHome extends Component {
   constructor(){
@@ -43,6 +44,7 @@ class ReviewsHome extends Component {
           )
         })}
       </div>
+      <Footer />
     </div>
     );
   }
