@@ -3,6 +3,7 @@ import './ArtistsHome.css';
 import Navbar from '../../Navbar/Navbar'
 import axios from 'axios';
 import Footer from '../../Footer/Footer';
+import { Link } from 'react-router-dom';
 
 class ArtistsHome extends Component {
   constructor(){
@@ -31,6 +32,7 @@ class ArtistsHome extends Component {
         <div className='home_artist_header'>ARTISTS</div>
         {this.state.artists === 0 ? <p>loading..</p> : this.state.artists.map((artist, index) => {
           return (
+            <Link to={`/artists/${artist.artist_id}`}>
             <div className='home_highlight_artist'>
               <div className='home_artist_styles'>
                 <div>
@@ -39,6 +41,7 @@ class ArtistsHome extends Component {
                 <h2>{artist.artist_name}</h2>
               </div>
             </div>
+            </Link>            
           )
         })}
       </div>

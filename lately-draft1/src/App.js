@@ -5,7 +5,6 @@ import router from './router';
 // import HomePage from './components/HomePage/HomePage'
 // import Navbar from './components/Navbar/Navbar'
 
-
 class App extends Component {
   render() {
     return (

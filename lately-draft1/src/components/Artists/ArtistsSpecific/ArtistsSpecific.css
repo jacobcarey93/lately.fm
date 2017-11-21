@@ -21,14 +21,18 @@
 
 .spec_highlight_artist {
     background-color: #F4F4F4;
-    height: 500px;
-    width: 700px;
+    height: 100%;
+    width: 800px;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    margin-top: 25px;
+    margin-top: 100px;
     margin-bottom: 25px;
     box-shadow: 0 10px 20px 0 rgba(0,0,0,0.1), 0 6px 6px 0 rgba(0,0,0,0.2);    
+}
+
+.spec_image_div{
+    margin-top: 4em;
 }
 
 .spec_artist_image_styles {
@@ -44,6 +48,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
 }
 
 .spec_artist_description {
@@ -59,7 +64,7 @@
 
 .spec_artist_header {
     width: 100%;
-    height: 580;
+    height: 100%;
     background-color: transparent;
     color: #C0B283;
     font-family: 'Lato';
@@ -71,4 +76,18 @@
     text-shadow: 10px 10px 7px #373737; 
     text-decoration: none;
     margin-left: 90px;
+}
+
+.back_icon_size {
+    height: 50px;
+    width: 50px;
+    /* margin-top: 100px; */
+}
+
+.back_placement {
+    height: 100%;
+    width: 100%;
+    margin-left: 15px;
+    margin-top: 15px;
+    z-index: 2;
 }

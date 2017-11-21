@@ -10,4 +10,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column; 
+}
+
+.footer_contacts {
+    height: 25px;
+    width: 25px;
+    margin-right: 20px;
 }

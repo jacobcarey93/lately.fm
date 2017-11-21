@@ -10,6 +10,7 @@ import AdminStoreManager from './components/Admin/AdminStoreManager/AdminStoreMa
 import ArtistsHome from './components/Artists/ArtistsHome/ArtistsHome';
 import ArtistsSpecific from './components/Artists/ArtistsSpecific/ArtistsSpecific';
 import HomePage from './components/HomePage/HomePage';
+// import Navbar from './components/Navbar/Navbar';
 // import MusicPlayer from './components/MusicPlayer/MusicPlayer';
 import PlaylistHome from './components/Playlist/PlaylistHome/PlaylistHome';
 import PlaylistSpecific from './components/Playlist/PlaylistSpecific/PlaylistSpecific';
@@ -30,6 +31,7 @@ import AddressForm from './components/Store/AccountOverview/AccountAddress/Addre
 export default (
   <Switch>
     <Route component={ HomePage } exact path="/homepage" />
+    {/* <Route component={ Navbar } path="/navbar/:playlistid" /> */}
     <Route component={ About } exact path="/about" />
     <Route component={ AdminArtistManager } exact path="/admin/artistmanager" />
     <Route component={ AdminHome } exact path="/admin/home" />
@@ -37,9 +39,9 @@ export default (
     <Route component={ AdminReviewManger } exact path="/admin/reviewmanager" />
     <Route component={ AdminStoreManager } exact path="/admin/storemanager" />
     <Route component={ ArtistsHome } exact path="/artists" />
-    <Route component={ ArtistsSpecific } exact path="/moreartists" />
+    <Route component={ ArtistsSpecific } exact path="/artists/:artistid" />
     <Route component={ PlaylistHome } exact path="/playlists" />
-    <Route component={ PlaylistSpecific } exact path="/playlists/:id" />
+    <Route component={ PlaylistSpecific } exact path="/playlists/:playlistid" />
     <Route component={ ReviewsHome } exact path="/reviews" />
     <Route component={ ReviewsSpecific } exact path="/morereviews" />
     <Route component={ AccountOverview } exact path="/account" />

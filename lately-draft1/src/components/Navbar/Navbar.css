@@ -129,7 +129,7 @@
   transition: .84s;
   background-color: #C0B283;  
   box-shadow: 0 10px 20px 0 rgba(0,0,0,0.1), 0 6px 6px 0 rgba(0,0,0,0.2);
-  z-index: 2;
+  z-index: 3;
 }
 
 .nav_open {
@@ -269,3 +269,28 @@
   height: 50px;
   width: 50px;
 }
+
+.nav_music_player_main {
+  height: 100%;
+  width: 0px;
+  margin-top: -25px;
+  float: left;
+  overflow: hidden;
+  transition: .84s;
+  position: absolute;
+  z-index: 2;
+}
+
+.nav_music_player_open {
+  width: 300px;
+}
+
+.nav_headphones_main {
+  margin-right: 28px;
+}
+
+.nav_headphones_img {
+  height: 33px;
+  width: 33px;
+}
+
