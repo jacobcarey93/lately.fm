@@ -104,7 +104,7 @@ class ShopNavbar extends Component {
 
             {/* search image */}
             <div className='shopnav_head_child_right'>
-              <img src='http://www.iconsdb.com/icons/preview/white/search-12-xxl.png' className='nav_search_img' alt='search' />
+              <img src='http://www.iconsdb.com/icons/preview/white/search-12-xxl.png' className='nav_search_img' alt='' />
               <div>
                 <div id="wrap">
                   <input id="search" name="search" type="text" placeholder="search" onChange={this.handleSearchChange} className='shopnav_input_one'/><input id="search_submit" value="Rechercher" type="submit" className='shopnav_input_two'/>
@@ -134,7 +134,6 @@ class ShopNavbar extends Component {
           </div>
         </div>
 
-        {/* slideout contact menu */}
 
         <div className={this.state.contactSlideVisible ? 'shopnav_contact_slide shopnav_open_contact' : 'shopnav_contact_slide'}>
           <div className='nav_pullout_cart'>

@@ -115,12 +115,12 @@ class Navbar extends Component {
 
 
               {/* search image */}
-              <img src='http://www.iconsdb.com/icons/preview/white/search-12-xxl.png' className='nav_search_img' />
+              {/* <img src='http://www.iconsdb.com/icons/preview/white/search-12-xxl.png' className='nav_search_img' />
               <div>
                 <div id="wrap">
                   <input id="search" name="search" type="text" placeholder="search" onChange={this.handleSearchChange} className='nav_input_one' /><input id="search_submit" value="Rechercher" type="submit" className='nav_input_two' />
                 </div>
-              </div>
+              </div> */}
 
               {/* headphones image */}
               <div className='nav_headphones_main'>
