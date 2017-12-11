@@ -14,6 +14,9 @@ class About extends Component {
         <div className='about_parent'>
           <div className='about_header'>ABOUT</div>
           <div className='about_content'>LATELY.FM MUSIC YOU SHOULD BE LISTENING TO</div>
+          <br />
+          <br />
+          <div className='about_content'>This is a demo application ONLY. If you have any questions, or issues please contact the owner of this domain at jacob.n.carey93@gmail.com </div>
         </div>
       </div>
     );

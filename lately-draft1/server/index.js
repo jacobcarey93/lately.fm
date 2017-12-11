@@ -160,12 +160,47 @@ app.get('/api/artists', (req, res, next) => {
     .catch(() => res.status(500).send())
 })
 
+app.get('/api/artists/:artistid', (req, res, next) => {
+  const db = app.get('db')
+  const { params } = req;
+
+  db.get_specific_artist([ params.artistid ])
+    .then((artist) => res.status(200).send(artist))
+    .catch(() => res.status(500).send())
+})
+
 //video endpoints
 app.get('/api/videos', (req, res, next) => {
   const db = app.get('db')
 
   db.get_all_videos()
     .then((videos) => res.status(200).send(videos))
+    .catch(() => res.status(500).send())
+})
+
+// playlist endpoints
+app.get('/api/playlists', (req, res, next) => {
+  const db = app.get('db')
+
+  db.get_all_playlists()
+    .then((playlists) => res.status(200).send(playlists))
+    .catch(() => res.status(500).send())
+})
+
+app.get('/api/playlists/:playlistid', (req, res, next) => {
+  const db = app.get('db')
+  const { params } = req;
+
+  db.get_specific_playlist([ params.playlistid ])
+    .then((playlist) => res.status(200).send(playlist))
+    .catch(() => res.status(500).send())
+})
+
+app.get('/api/newest/playlist', (req, res, next) => {
+  const db = app.get('db')
+
+  db.get_newest_playlist()
+    .then((playlist) => res.status(200).send(playlist))
     .catch(() => res.status(500).send())
 })
 
@@ -186,6 +221,7 @@ app.get('/api/product/:id', ( req, res, next ) => {
   .then( ( product ) => res.status(200).send( product ) )
   .catch( () => res.status(500).send( ) )
 })
+
 
 //account endpoints
 app.post('/api/account/address/update', ( req, res, next ) => {

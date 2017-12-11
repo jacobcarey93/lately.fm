@@ -104,12 +104,12 @@ class ShopNavbar extends Component {
 
             {/* search image */}
             <div className='shopnav_head_child_right'>
-              <img src='http://www.iconsdb.com/icons/preview/white/search-12-xxl.png' className='nav_search_img' alt='search' />
+              {/* <img src='http://www.iconsdb.com/icons/preview/white/search-12-xxl.png' className='nav_search_img' alt='search' />
               <div>
                 <div id="wrap">
                   <input id="search" name="search" type="text" placeholder="search" onChange={this.handleSearchChange} className='shopnav_input_one'/><input id="search_submit" value="Rechercher" type="submit" className='shopnav_input_two'/>
                 </div>
-              </div>
+              </div> */}
 
               {/* shopping cart image */}
               <div className='nav_shopping_cart'>

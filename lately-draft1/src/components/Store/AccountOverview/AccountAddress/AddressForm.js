@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './AddressForm.css';
 import axios from 'axios';
-import { getUserInfo, updateUserFirstName, updateUserLastName, updateUserAddress, updateUserCity, updateUserState, updateUserZip } from '../../../../ducks/reducer';
+import { getUserInfo } from '../../../../ducks/reducer';
 import { connect } from 'react-redux';
 import { Link } from "react-router-dom";
 import ShopNavbar from '../../../Navbar/ShopNavbar';
@@ -93,7 +93,6 @@ class AddressForm extends Component {
                         <div className='center_btn'>
                             <p className='add_address_btn' onClick={() => this.updateAddress()}>ADD ADDRESS</p>
                         </div>
-                        {console.log('this one' + this.state.city)}
                     </div>
                 </div>
             </div>
@@ -103,27 +102,13 @@ class AddressForm extends Component {
 
 
 function mapStateToProps(state) {
-    const { firstName, lastName, address, city, userState, zip } = state;
-    console.log("this is the state", state)
     return {
         user: state.user,
-        firstName,
-        lastName,
-        address,
-        city,
-        state,
-        zip
     }
 }
 
 const mapDispatchToProps = {
     getUserInfo: getUserInfo,
-    updateUserFirstName: updateUserFirstName,
-    updateUserLastName: updateUserLastName,
-    updateUserAddress: updateUserAddress,
-    updateUserCity: updateUserCity,
-    updateUserState: updateUserState,
-    updateUserZip: updateUserZip
 }
 
 

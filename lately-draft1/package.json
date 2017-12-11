@@ -24,6 +24,7 @@
     "react-scrolling-carousel": "^1.0.2",
     "react-slick": "^0.15.4",
     "react-slick-animated-goto": "^0.14.11",
+    "react-spotify-player": "^1.0.3",
     "react-stripe-checkout": "^2.6.3",
     "react-toastify": "^2.1.6",
     "react-youtube": "^7.5.0",
