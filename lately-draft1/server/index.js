@@ -21,6 +21,7 @@ app.use(cors())
 // this is all of the auth0 stuff
 app.use(passport.initialize());
 app.use(passport.session());
+app.use( express.static( `${__dirname}/../build` ) );
 
 massive(process.env.CONNECTION_STRING).then(db => {
   app.set('db', db);
