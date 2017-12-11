@@ -134,7 +134,6 @@ class ShopNavbar extends Component {
           </div>
         </div>
 
-        {/* slideout contact menu */}
 
         <div className={this.state.contactSlideVisible ? 'shopnav_contact_slide shopnav_open_contact' : 'shopnav_contact_slide'}>
           <div className='nav_pullout_cart'>
